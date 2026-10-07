@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOP BRANDS</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #000000;
+        }
+        
+        .container-central {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            padding: 12px;
+        }
+        /* Container List */
+        
+        .hospital-list {
+    padding: 40px 28px;
+    /* Gradasi warna diperhalus dengan titik sudut hangat agar lebih kaya dimensi */
+    background: linear-gradient(135deg, #dccbaf 0%, #d4a73f 45%, #df6a17 100%);
+    border-radius: 25px;
+    margin: 30px 20px;
+    
+    /* Peningkatan efek bayangan agar terangkat (3D/Floating effect) */
+    box-shadow: 
+        0 20px 45px rgba(0, 0, 0, 0.45),
+        inset 0 1px 1px rgba(255, 255, 255, 0.4); /* Highlight halus di bagian dalam atas */
+    
+    /* Garis tepi semi-transparan untuk kesan mahal (Glassmorphism border) */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek garis aksen kilap di bagian atas container */
+.hospital-list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #e5e1d8, #c77828, #f17d01);
+}
+
+/* Efek sentuhan saat mouse diarahkan (Hover effect) */
+.hospital-list:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.55),
+        inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+        /* Judul */
+        
+        .hospital-list h1 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #000000;
+            position: relative;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        /* Garis bawah elegan */
+        
+        .hospital-list h1::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #9e805a, #3b3a38);
+            display: block;
+            margin: 15px auto 0;
+            border-radius: 10px;
+        }
+        /* Efek glow halus */
+        
+        .hospital-list h1 {
+            text-shadow: 0 0 10px rgb(255, 250, 250);
+        }
+        
+        .hospital-item h3 {
+    color: #111827;
+    font-size: 20px;
+    font-weight: 800;
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    display: inline-block;
+    text-shadow: 0 2px 8px rgba(243, 241, 241, 0.8);
+}
+
+.hospital-item h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%; /* Panjang bar aksen */
+    height: 3px;
+    background: linear-gradient(90deg, #ff8c00 0%, #ff5500 100%);
+    border-radius: 2px;
+}
+        
+        
+        .hospital-item p {
+            color: #000000;.hospital-list {
+    padding: 40px 28px;
+    /* Gradasi warna diperhalus dengan titik sudut hangat agar lebih kaya dimensi */
+    background: linear-gradient(135deg, #ce9b50 0%, #bd8a50 45%, #df6a17 100%);
+    border-radius: 25px;
+    margin: 30px 20px;
+    
+    /* Peningkatan efek bayangan agar terangkat (3D/Floating effect) */
+    box-shadow: 
+        0 20px 45px rgba(0, 0, 0, 0.45),
+        inset 0 1px 1px rgba(255, 255, 255, 0.4); /* Highlight halus di bagian dalam atas */
+    
+    /* Garis tepi semi-transparan untuk kesan mahal (Glassmorphism border) */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek garis aksen kilap di bagian atas container */
+.hospital-list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ffe29f, #ffaa43, #ffe29f);
+}
+
+/* Efek sentuhan saat mouse diarahkan (Hover effect) */
+.hospital-list:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.55),
+        inset 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+        }
+        
+        .hospital-item strong {
+            color: #000000;
+        }
+        
+        .price {
+            color: #00ffcc;
+            font-weight: bold;
+        }
+        /* Search Form */
+        
+        #searchForm {
+            background: #f18c00;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .container-content {
+            background: #000000;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+        
+        .container-content img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .container-content h1 {
+            font-size: 15px;
+            margin: 6px 0;
+        }
+        
+        dialog.popup {
+            margin: auto;
+            width: 94%;
+            max-width: 520px;
+            border: none;
+            border-radius: 14px;
+            padding: 16px;
+        }
+        
+        dialog.popup img {
+            display: block;
+            margin: 0 auto 12px;
+            width: 100%;
+            max-height: 65vh;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        
+        div img {
+            width: 600px;
+            aspect-ratio: 4/3;
+        }
+        
+        dialog.popup button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+        }
+        /* Mobile Responsive */
+        
+        @media (max-width: 768px) {
+            .navigation {
+                width: 0;
+                border-right: none;
+            }
+            .navigation.active {
+                width: 240px;
+                box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .main {
+                margin-left: 0;
+            }
+            .navigation.active~.main {
+                margin-left: 0;
+            }
+            .container {
+                padding: 15px;
+            }
+            #searchForm {
+                padding: 15px;
+            }
+            #searchForm .row {
+                flex-direction: column;
+            }
+            #searchForm .col {
+                max-width: 100%;
+                flex: 0 0 100%;
+                margin-bottom: 10px;
+            }
+            #searchForm button {
+                margin-top: 0;
+            }
+            .hospital-item {
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+            }
+            .hospital-item img {
+                max-width: 100%;
+                height: auto;
+            }
+            .hospital-list h1 {
+                font-size: 1.3rem;
+            }
+            .hospital-item h3 {
+                font-size: 1.1rem;
+            }
+            .hospital-item p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container-central {
+                gap: 20px;
+                padding: 20px;
+            }
+            .container-content img {
+                height: 180px;
+            }
+            div img {
+                width: 350px;
+                aspect-ratio: 3/4;
+            }
+            .price {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+            }
+            .old-price {
+                text-decoration: line-through;
+                color: #999;
+            }
+            .discount-price {
+                color: #e53935;
+                font-weight: bold;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .topbar {
+                padding: 10px 15px;
+            }
+            .hospital-list {
+                padding: 15px;
+            }
+            .price {
+                font-size: 1rem;
+            }
+            .new-price {
+                font-size: 1.1rem;
+            }
+            /* GAMBAR DIPERBESAR */
+            .container-content img,
+            div img {
+                width: 400px !important;
+                height: 500px !important;
+                aspect-ratio: 9/16;
+                object-fit: cover;
+                border-radius: 12px;
+            }
+            /* LAYOUT MOBILE */
+            .container-central {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                padding: 12px;
+            }
+            /* CARD JADI LEBIH LEGA */
+            .container-content {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding: 12px;
+            }
+            /* TEXT AREA */
+            .container-content h1 {
+                font-size: 15px;
+                text-align: left;
+            }
+            /* POPUP IKUT BESAR */
+            dialog.popup img {
+                width: 160px !important;
+                height: 200px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+                        <span class="title">HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Rute.html">
+                        <span class="icon">
+                <ion-icon name="trophy-outline"></ion-icon>
+              </span>
+                        <span class="title">TOP BRANDS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Informasi.html">
+                        <span class="icon">
+                <ion-icon name="bulb-outline"></ion-icon>
+              </span>
+                        <span class="title">INFORMATION</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Daftarlist.html">
+                        <span class="icon">
+                <ion-icon name="trending-up-outline"></ion-icon>
+              </span>
+                        <span class="title">TRENDING PRODUCTS</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="container">
+                <!-- Search Form -->
+                <form id="searchForm" onsubmit="return false;">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <input id="inputSearch" class="form-control" type="text" placeholder="Search brands, products, or notes..." />
+                            </div>
+                            <div class="col-auto">
+                                <button id="searchBtn" type="button" class="btn btn-primary" onclick="searchProducts()">
+                    Search
+                  </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="hospital-list">
+                    <h1>TRENDING PRODUCTS</h1>
+
+                    <div id="productList">
+                        <!-- Products will be displayed here -->
+                        <div class="hospital-item" data-keywords="Mannings Guardian Grapefruit Refreshing Body Wash, adalah produk sabun cair dengan aroma jeruk citrus yang menyegarkan indra saat mandi. Diperkaya dengan ekstrak buah grapefruit dan gliserin untuk melembapkan kulit. Diformulasikan tanpa kandungan sabun biasa (soap-free) sehingga terasa lembut. ">
+                            <img src="assets/img/Grapefruit.png" alt="Mannings Guardian Grapefruit Refreshing Body Wash " />
+                            <div>
+
+                                <h3>Mannings Guardian Grapefruit Refreshing Body Wash </h3>
+
+                                <p>
+                                    adalah produk sabun cair dengan aroma jeruk citrus yang menyegarkan indra saat mandi. Diperkaya dengan ekstrak buah grapefruit dan gliserin untuk melembapkan kulit. Diformulasikan tanpa kandungan sabun biasa (soap-free) sehingga terasa lembut.</p>
+                                    <strong>Kandungan Utama : </strong> Ekstrak Grapefruit (Citrus Grandis Fruit Extract) yang memberikan aroma sitrus menyegarkan dan Glycerin untuk membantu melembapkan kulit.      </p>
+
+                                <hr />
+                                <p class="price"><strong>Harga:</strong> Rp 93.000</p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords="Mannings Guardian Lavender Refreshing Body Wash">
+                            <img src="assets/img/Lavender.png" alt="Mannings Guardian Lavender Refreshing Body Wash" />
+                            <div>
+
+                                <h3>Mannings Guardian Lavender Refreshing Body Wash</h3>
+
+                                <p>
+                                    adalah sabun mandi bentuk gel dari brand Mannings Guardian diperkaya dengan ekstrak lavender dari Eropa (lavender extract from Europe) dapat membersihkan tubuh secara lembut, menyegarkan serta memberikan efek relaksasi dengan aroma lavender yang lembut.</p>
+                                <p>
+                                    <strong>Kandungan Utama :</strong> Diperkaya dengan ekstrak lavender dari Eropa (lavender extract from Europe) dan gliserin untuk membantu melembapkan kulit.
+ </p>
+
+                                <hr />
+                                <p class="price"><strong>Harga:</strong> Rp.93.000</p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords="Mannings Guardian Aloevera Refreshing Body Wash,Diperkaya dengan ekstrak jus daun lidah buaya (aloe vera leaf juice) dan gliserin untuk membantu menjaga kelembapan kulit.
+ ">
+                            <img src="assets/img/Aloevera.png" alt="Mannings Guardian Aloevera Refreshing Body Wash " />
+                            <div>
+
+                                <h3>Mannings Guardian Aloevera Refreshing Body Wash </h3>
+
+                                <p>
+                                    adalah sabun mandi cair (shower gel) dari Guardian yang diperkaya dengan kandungan lidah buaya (aloe vera). Membersihkan kulit secara lembut, menyegarkan, serta menenangkan kulit dengan aroma lembut yang menyegarkan.</P>
+
+                                <p>
+                                    <strong>Kandungan Utama :</strong>Diperkaya dengan ekstrak jus daun lidah buaya (aloe vera leaf juice) dan gliserin untuk membantu menjaga kelembapan kulit.
+                               </p>
+
+                               
+                                <hr />
+                                <p class="price"><strong>Harga:</strong> Rp.199.000</p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords="Mannings Guardian Almond Milk Shower Cream,Natural almond milk (susu almond) dan glycerin (gliserin) untuk menjadikan kulit terasa lebih lembut, kenyal, dan terawat.  ">
+                            <img src="assets/img/Mannings almond (1).png" alt="Mannings Guardian Almond Milk Shower Cream " />
+                            <div>
+
+                                <h3>Mannings Guardian Almond Milk Shower Cream </h3>
+
+                                <p>
+                                   adalah krim mandi ukuran 1 liter yang diformulasikan khusus dengan kandungan susu almond alami dan gliserin untuk melembapkan kulit. Memiliki formula lembut yang aman dan tidak merusak skin barrier atau lapisan pelindung kulit. Diperkaya dengan Hydra-Active blend dan susu almond yang membantu menjaga kelembapan alami kulit tanpa membuatnya terasa kering. Menghasilkan busa lembut dengan keharuman almond yang manis, powdery, dan menenangkan.   </p>
+
+                                
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Natural almond milk (susu almond) dan glycerin (gliserin) untuk menjadikan kulit terasa lebih lembut, kenyal, dan terawat.   </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price">Rp.277.000</span>
+                                    <span class="discount-price">Rp.193.500</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords="Mannings Guardian Soft & Moist Rice Milk Shower Cream ,Diperkaya dengan Rice Milk alami dan gliserin untuk menjaga kelembapan kulit. adalah krim mandi cair yang diformulasikan khusus dengan kandungan ekstrak rice milk (susu beras) alami dan gliserin untuk membersihkan serta merawat kulit. Sabun Rice Milk Guardian memiliki formulasi soap-free (bebas sabun) sehingga sangat lembut di kulit dan tidak merusak lapisan pelindung kelembapan alami kulit. Diperkaya dengan sifat antioksidan dari rice milk yang membantu menjaga kesehatan kulit secara menyeluruh.">
+                            <img src="assets/img/Mannings almond (2).png" alt="Mannings Guardian Soft & Moist Rice Milk Shower Cream " />
+                            <div>
+
+                                <h3>Mannings Guardian Soft & Moist Rice Milk Shower Cream </h3>
+
+                                <p>
+                                    Badalah krim mandi cair yang diformulasikan khusus dengan kandungan ekstrak rice milk (susu beras) alami dan gliserin untuk membersihkan serta merawat kulit. Sabun Rice Milk Guardian memiliki formulasi soap-free (bebas sabun) sehingga sangat lembut di kulit dan tidak merusak lapisan pelindung kelembapan alami kulit. Diperkaya dengan sifat antioksidan dari rice milk yang membantu menjaga kesehatan kulit secara menyeluruh. </p>
+
+                             
+                                <p>
+                                    <strong>Kandungan Utama :</strong>Diperkaya dengan Rice Milk alami dan gliserin untuk menjaga kelembapan kulit. 
+                                </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong> Rp.129.000                                     <span class="old-price"></span>                                     <span class="discount-price"></span>                               </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords=" Mannings Guardian Goat's Milk Shower Cream ">
+                            <img src="assets/img/Mannings GoatsMilk.png" alt="Mannings Guardian Goat's Milk Shower Cream " />
+                            <div>
+
+                                <h3>Mannings Guardian Goat's Milk Shower Cream </h3>
+
+                                <p>
+                                  adalah sabun mandi cair yang diformulasikan khusus dengan kandungan ekstrak susu kambing alami dan gliserin untuk merawat kelembapan kulit. Memiliki pH yang seimbang untuk membersihkan kulit dengan lembut tanpa merusak lapisan pelindung kelembapan alami (moisture barrier). Kandungan Susu Kambing kaya akan antioksidan dari goat's milk yang membantu menjaga kesehatan kulit, menutrisi, serta membuatnya tampak lebih cerah.      </p>
+
+                                <p>
+                                    <strong>Kandungan Utama :</strong> Diformulasikan secara khusus dengan susu kambing (Goat Milk) alami dan gliserin untuk menutrisi kulit.    </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>Rp.146.500
+                                    <span class="old-price"></span>
+                                    <span class="discount-price"></span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords=" Mannings Guardian Soft & Moist Olive Shower Cream, adalah sabun mandi cair yang diformulasikan khusus dengan ekstrak zaitun (olive) dan gliserin untuk melembapkan, menutrisi, serta menjadikan kulit terasa lembut, halus, dan kenyal.  Ekstrak Zaitun (Olive Extract) dan Gliserin  ">
+                            <img src="assets/img/olive.png" alt="Mannings Guardian Soft & Moist Olive Shower Cream" />
+                            <div>
+
+                                <h3>Mannings Guardian Soft & Moist Olive Shower Cream</h3>
+
+                                <p>
+                                  adalah sabun mandi cair yang diformulasikan khusus dengan ekstrak zaitun (olive) dan gliserin untuk melembapkan, menutrisi, serta menjadikan kulit terasa lembut, halus, dan kenyal.    </p>
+
+                                <p>
+                                    <strong>Kandungan Utama :</strong>  Ekstrak Zaitun (Olive Extract) dan Gliserin                       </p>
+
+                           
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>Rp. 75.000 <span class="old-price"></span>                                     <span class="discount-price"></span>                               </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords="Mannings Guardian Rose Moisturising Shower Cream, adalah krim mandi yang diformulasikan khusus dengan ekstrak mawar (rose extract) dan gliserin untuk melembapkan, menutrisi, serta menjadikan kulit terasa lembut, halus, dan kenyal. Memiliki formula bebas sabun (soap-free) sehingga tidak membuat kulit terasa kering.">
+                            <img src="assets/img/Rose.png" alt="Mannings Guardian Rose Moisturising Shower Cream" />
+                            <div>
+
+                                <h3>Mannings Guardian Rose Moisturising Shower Cream</h3>
+
+                                <p>
+                                    adalah krim mandi yang diformulasikan khusus dengan ekstrak mawar (rose extract) dan gliserin untuk melembapkan, menutrisi, serta menjadikan kulit terasa lembut, halus, dan kenyal. Memiliki formula bebas sabun (soap-free) sehingga tidak membuat kulit terasa kering.</p>
+
+                                <p>
+                                    <strong>Kandungan Utama :</strong> Produk ini mengandung bahan-bahan seperti Aqua, Sodium Laureth Sulfate, Cocamidopropyl Betaine, Glycerin, Rosa Centifolia Flower Extract (Ekstrak Bunga Mawar),     </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price">Rp 75.000</span>
+                                    <span class="discount-price">Rp.60.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords="  Mannings Guardian Cherry Blossom, adalah sabun mandi cair yang diformulasikan khusus dengan ekstrak bunga Sakura dan Glycerin untuk memberikan nutrisi, menjaga kelembapan alami, dan membuat kulit terasa lebih kenyal. Diperkaya dengan ekstrak Bunga Sakura (Cherry Blossom Extract) dan Gliserin.">
+                            <img src="assets/img/Mannings Cherryblossom.png" alt="Mannings Guardian Cherry Blossom " />
+                            <div>
+
+                                <h3>Mannings Guardian Cherry Blossom </h3>
+
+                                <p>
+                                     adalah sabun mandi cair yang diformulasikan khusus dengan ekstrak bunga Sakura dan Glycerin untuk memberikan nutrisi, menjaga kelembapan alami, dan membuat kulit terasa lebih kenyal.
+                                </p>
+
+                                
+                                <p>
+                                    <strong>Kandungan Utama :</strong>Diperkaya dengan ekstrak Bunga Sakura (Cherry Blossom Extract) dan Gliserin.
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price">Rp 100.000</span>
+                                    <span class="discount-price">Rp 92.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords=" Guardian Kids Head To Toe Wash adalah produk sabun dan sampo 2-in-1 khusus anak dan bayi baru lahir (newborn) yang membersihkan serta melembapkan rambut dan kulit tubuh.
+Guardian Kids Strawberry Yoghurt Head To Toe Wash: Varian dengan ekstrak stroberi dan yoghurt.">
+                            <img src="assets/img/Kids Strawberry.png" alt="Guardian Kids Strawberry Yoghurt Head To Toe Wash " />
+                            <div>
+
+                                <h3>Guardian Kids Strawberry Yoghurt Head To Toe Wash</h3>
+
+                                <p>
+                                    Guardian Kids Head To Toe Wash adalah produk sabun dan sampo 2-in-1 khusus anak dan bayi baru lahir (newborn) yang membersihkan serta melembapkan rambut dan kulit tubuh.
+Guardian Kids Strawberry Yoghurt Head To Toe Wash: Varian dengan ekstrak stroberi dan yoghurt.
+                                </p>
+<h3>Kandungan Utama : </h3>    
+                                <p>
+                                    <strong>Formula 2-in-1 :</strong> Dapat digunakan dari rambut, kulit kepala, hingga seluruh badan.                                </p>
+
+                                <p>
+                                    <strong>Kandungan Yoghurt Activ:</strong> Diperkaya bubuk yoghurt yang mengandung Vitamin A, B1, B2, B5, dan B6 untuk menutrisi kulit dan rambut. 
+                                <p>
+                                    <strong>Ekstrak Alami :</strong> Mengandung ekstrak chamomile, calendula, rice milk, serta tambahan madu untuk menjaga kelembapan.                                </p>
+                                 <p>
+                                    <strong>Aman untuk Bayi Baru Lahir :</strong> Telah diuji oleh dokter anak (pediatrician tested) dan terbukti aman untuk newborn.                               </p>
+                                      <p>
+                                    <strong>Formula Lembut :</strong> Bebas paraben (paraben-free), memiliki pH seimbang, tidak mengiritasi, dan tear-free (tidak perih di mata). 
+
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price">Rp.171.000</span>
+                                    <span class="discount-price">Rp.157.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords="Guardian Kids Orange Yoghurt Head To Toe Wash:">
+                            <img src=" assets/img/Kids Orange.png" alt="Guardian Kids Orange Yoghurt Head To Toe Wash: " />
+                            <div>
+
+                                <h3>Guardian Kids Orange Yoghurt Head To Toe Wash:</h3>
+
+                                <p>
+                                    Guardian Kids Head To Toe Wash adalah produk sabun dan sampo 2-in-1 khusus anak dan bayi baru lahir (newborn) yang membersihkan serta melembapkan rambut dan kulit tubuh.
+Guardian Kids Strawberry Yoghurt Head To Toe Wash: Varian dengan ekstrak stroberi dan yoghurt.
+                                </p>
+<h3>Kandungan Utama : </h3>    
+                                <p>
+                                    <strong>Formula 2-in-1 :</strong> Dapat digunakan dari rambut, kulit kepala, hingga seluruh badan.                                </p>
+
+                                <p>
+                                    <strong>Kandungan Yoghurt Activ:</strong> Diperkaya bubuk yoghurt yang mengandung Vitamin A, B1, B2, B5, dan B6 untuk menutrisi kulit dan rambut. 
+                                <p>
+                                    <strong>Ekstrak Alami :</strong> Mengandung ekstrak chamomile, calendula, rice milk, serta tambahan madu untuk menjaga kelembapan.                                </p>
+                                <p>
+                                    <strong>Aman untuk Bayi Baru Lahir :</strong> Telah diuji oleh dokter anak (pediatrician tested) dan terbukti aman untuk newborn.                               </p>
+                                      <p>
+                                    <strong>Formula Lembut :</strong> Bebas paraben (paraben-free), memiliki pH seimbang, tidak mengiritasi, dan tear-free (tidak perih di mata). 
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp 120.000</span>
+                                    <span class="discount-price ">Rp 93.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords="Mannings Guardian Lavender ukuran 100ml (kemasan travel/mini),Adalah sabun mandi bentuk gel dari brand Mannings Guardian diperkaya dengan ekstrak lavender dari Eropa (lavender extract from Europe) dapat membersihkan tubuh secara lembut, menyegarkan serta memberikan efek relaksasi dengan aroma lavender yang lembut. ">
+                            <img src="assets/img/Lavender 100ml.png " alt="Mannings Guardian Lavenderukuran 100ml (kemasan travel/mini)" />
+                            <div>
+
+                                <h3>Mannings Guardian Lavender ukuran 100ml (kemasan travel/mini)</h3>
+
+                                <p>
+                                    Adalah sabun mandi bentuk gel dari brand Mannings Guardian diperkaya dengan ekstrak lavender dari Eropa (lavender extract from Europe) dapat membersihkan tubuh secara lembut, menyegarkan serta memberikan efek relaksasi dengan aroma lavender yang lembut. 
+                                </p>
+
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.129.000                                     <span class="old-price "></span>                                     <span class="discount-price "></span>                               </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" Adalah sabun mandi cair yang diformulasikan khusus dengan ekstrak bunga Sakura dan Glycerin untuk memberikan nutrisi, menjaga kelembapan alami, dan membuat kulit terasa lebih kenyal.Mannings Guardian Cherry Blossom ukuran 100ml (kemasan travel/mini)">
+                            <img src="assets/img/Cherry blossom 100.png" alt="Mannings Guardian Cherry Blossom ukuran 100ml (kemasan travel/mini)
+ " />
+                            <div>
+
+                                <h3>Mannings Guardian Cherry Blossom ukuran 100ml (kemasan travel/mini)</h3>
+
+                                <p>Adalah sabun mandi cair yang diformulasikan khusus dengan ekstrak bunga Sakura dan Glycerin untuk memberikan nutrisi, menjaga kelembapan alami, dan membuat kulit terasa lebih kenyal.
+                               
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp.295.000</span>
+                                    <span class="discount-price ">Rp.236.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" Adalah produk sabun cair dengan aroma jeruk citrus yang menyegarkan indra saat mandi. Diperkaya dengan ekstrak buah grapefruit dan gliserin untuk melembapkan kulit. Diformulasikan tanpa kandungan sabun biasa (soap-free) sehingga terasa lembut. ">
+                            <img src="assets/img/Grapefruit 100.png " alt="Mannings Guardian Grapefruit 100ml (kemasan travel/mini)" />
+                            <div>
+
+                                <h3>Mannings Guardian Grapefruit ukuran 100ml (kemasan travel/mini)</h3>
+
+                                <p>
+                                    Adalah produk sabun cair dengan aroma jeruk citrus yang menyegarkan indra saat mandi. Diperkaya dengan ekstrak buah grapefruit dan gliserin untuk melembapkan kulit. Diformulasikan tanpa kandungan sabun biasa (soap-free) sehingga terasa lembut.</p>
+                                
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp.295.000</span>
+                                    <span class="discount-price ">Rp.236.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" Mannings Guardian Conditioning Shampoo">
+                            <img src="assets/img/Aloe vera shampoo.png " alt="Mannings Guardian Conditioning Shampoo" />
+                            <div>
+
+                                <h3>Mannings Guardian Conditioning Shampoo</h3>
+
+                                <p>
+                                    Scalp Care & Calming (Aloe Vera & Ginseng)
+                                </p>
+
+                                <p>
+                                    <strong>Fungsi :</strong>Merawat kulit kepala sekaligus memberikan sensasi menenangkan.</p>
+
+                                <p>
+                                    <strong>Kandungan Utama :</strong> Lidah buaya (aloe vera) dan ginseng.                  </p>
+
+                              
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.205.500                                     <span class="old-price "></span>                                     <span class="discount-price "></span>                               </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" Mannings Guardian Conditioning Shampoo ">
+                            <img src="assets/img/Honey Shampoo.png " alt="Mannings Guardian Conditioning Shampoo" />
+                            <div>
+
+                                <h3>Mannings Guardian Conditioning Shampoo</h3>
+
+                                <p>
+                                    Smooth & Silky (Honey & Soy)</p>
+
+                                <p>
+                                    <strong>Fungsi:</strong> Menjaga rambut agar terasa lebih lembut, halus, dan mudah diatur.                             </p>
+
+                                <p>
+                                    <strong>Kandungan Utama :</strong>Ekstrak madu (honey) dan kedelai (soy).</p>
+
+                             
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.205.500                                     <span class="old-price "></span>                                     <span class="discount-price "></span>                               </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" 
+ Facial Cotton 35 gram,Kapas Mannings (yang secara resmi dipasarkan sebagai Mannings Guardian Cotton) merupakan produk kapas kecantikan berkualitas tinggi milik jaringan ritel kesehatan dan kecantikan terkemuka di Asia. Dibuat dari 100% kapas murni, kapas ini sangat populer karena teksturnya yang sangat lembut, daya serapnya tinggi, aman secara dermatologis, serta bebas dari zat fluoresen (pemutih pakaian). ">
+                            <img src="assets/img/Facial cotton 35.png" alt=" Facial Cotton 35 gram" />
+                            <div>
+
+                                <h3>Facial Cotton 35 gram</h3>
+
+                                <p>
+                                    <strong>Kapas Mannings </strong>(yang secara resmi dipasarkan sebagai Mannings Guardian Cotton) merupakan produk kapas kecantikan berkualitas tinggi milik jaringan ritel kesehatan dan kecantikan terkemuka di Asia. Dibuat dari 100% kapas murni, kapas ini sangat populer karena teksturnya yang sangat lembut, daya serapnya tinggi, aman secara dermatologis, serta bebas dari zat fluoresen (pemutih pakaian).                                  </p>
+
+                            
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp76.000</span>
+                                    <span class="discount-price ">Rp.69.500</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords="Facial Cotton 75 gram (yang secara resmi dipasarkan sebagai Mannings Guardian Cotton) merupakan produk kapas kecantikan berkualitas tinggi milik jaringan ritel kesehatan dan kecantikan terkemuka di Asia. Dibuat dari 100% kapas murni, kapas ini sangat populer karena teksturnya yang sangat lembut, daya serapnya tinggi, aman secara dermatologis, serta bebas dari zat fluoresen (pemutih pakaian).  ">
+                            <img src="assets/img/Facial Cotton 75.png" alt="Facial Cotton 75 gram" />
+                            <div>
+
+                                <h3>Facial Cotton 75 gram</h3>
+
+                            
+
+                                <p>
+                                    <strong>Kapas Mannings </strong>(yang secara resmi dipasarkan sebagai Mannings Guardian Cotton) merupakan produk kapas kecantikan berkualitas tinggi milik jaringan ritel kesehatan dan kecantikan terkemuka di Asia. Dibuat dari 100% kapas murni, kapas ini sangat populer karena teksturnya yang sangat lembut, daya serapnya tinggi, aman secara dermatologis, serta bebas dari zat fluoresen (pemutih pakaian).                            </p>
+
+                              
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp 52.000</span>
+                                    <span class="new-price ">Rp 36.000</span>                                 </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" Round Cotton Puff (Kapas Bulat) Kapas berbentuk lingkaran yang bebas serat halus (lint-free), umumnya dikemas dengan kantong zip-lock praktis sehingga tetap higienis ">
+                            <img src="assets/img/Facial cotton 80.png " alt="Round Cotton Puff (Kapas Bulat) 80g" />
+                            <div>
+
+                                <h3>Round Cotton Puff (Kapas Bulat) 80g</h3>
+
+                                <p>
+                                     Kapas berbentuk lingkaran yang bebas serat halus (lint-free), umumnya dikemas dengan kantong zip-lock praktis sehingga tetap higienis</p>
+
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp.52.000</span>
+                                    <span class="discount-price ">Rp.36.000</span>
+                                </p>
+                            </div>
+
+
+                            <div class="hospital-item " data-keywords="Mannings Facial Tissue Kapas berbentuk lingkaran yang bebas serat halus (lint-free), umumnya dikemas dengan kantong zip-lock praktis sehingga tetap higienis ">
+                                <img src="assets/img/Tisue.png " alt="Mannings Facial Tissue " />
+                                <div>
+
+                                    <h3>Mannings Facial Tissue</h3>
+
+                                    <p>
+                                        Tissue kering wajah , Ukuran 200 lembar (200S), Bahan: Serat kayu alami (Virgin Wood Pulp) yang lembut dan aman untuk kulit.
+                                    </p>
+
+                                   
+                                    <hr />
+                                    <p class="price ">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price ">Rp.52.000</span>
+                                        <span class="discount-price ">Rp.36.000</span>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="hospital-item " data-keywords="Mannings Guardian Goat's Milk Moisturising Shower Cream 600ml Refill Pack ">
+                                <img src="assets/img/Goat Milks Refill.png" alt="Mannings Guardian Goat's Milk Moisturising Shower Cream 600ml Refill Pack" />
+                                <div>
+
+                                    <h3>Mannings Guardian Goat's Milk Moisturising Shower Cream 600ml Refill Pack</h3>
+
+                                    <p>
+                                        adalah krim mandi berukuran 1 liter yang diformulasikan khusus dengan susu kambing alami dan gliserin. Kandungan antioksidan dari susu kambing membantu menjaga kesehatan kulit dan mencerahkannya.                                     </p>
+
+
+                                    <hr />
+                                    <p class="price ">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price ">Rp 50.500</span>
+                                        <span class="new-price ">Rp 32.500</span>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="hospital-item " data-keywords="
+Mannings (Guardian) Rice Milk Shower Cream kemasan isi ulang (refill) 600ml ">
+                                <img src="assets/img/Rice Milk Refill.png " alt="
+Mannings (Guardian) Rice Milk Shower Cream kemasan isi ulang (refill) 600ml " />
+                                <div>
+
+                                    <h3>Mannings (Guardian) Rice Milk Shower Cream kemasan isi ulang (refill) 600ml</h3>
+
+                                    <p>
+                                        Diformulasikan secara khusus dengan kandungan susu almond alami dan gliserin. Berfungsi untuk membersihkan dan melindungi kulit dengan lembut tanpa mengikis lapisan kelembapan alami kulit, sehingga kulit menjadi lebih halus, lembap, dan kenyal.</p>
+                                    
+                                    <hr />
+                                    <p class="price ">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price ">Rp 50.500</span>
+                                        <span class="new-price ">Rp 32.500</span>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="hospital-item " data-keywords="Mannings (Guardian) Cherryblossom Cream kemasan isi ulang (refill) 600ml ">
+                                <img src="assets/img/Cherry blossom refill.png" alt="Mannings (Guardian) Cherryblossom Cream kemasan isi ulang (refill) 600ml " />
+                                <div>
+
+                                    <h3>Mannings (Guardian) Cherryblossom Cream kemasan isi ulang (refill) 600ml</h3>
+
+                                    <p>
+                                        Diformulasikan dengan ekstrak bunga sakura dan gliserin untuk memberikan kelembapan ekstra, nutrisi, membantu menyamarkan kerutan, serta memancarkan kilau kulit yang segar. Dilengkapi dengan aroma bunga sakura yang lembut untuk memanjakan indera Anda.                                </p>
+
+                                    <hr />
+                                    <p class="price ">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price ">Rp 52.000</span>
+                                        <span class="new-price ">Rp 36.000</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hospital-item" data-keywords="Mannings Guardian JOGUMAN Lavender Refreshing Shower Gel 1L">
+                            <img src="assets/img/Joguman Lavender.png" alt="Mannings Guardian JOGUMAN Lavender Refreshing Shower Gel 1L" />
+                            <div>
+
+                                <h3>Mannings Guardian JOGUMAN Lavender Refreshing Shower Gel 1L</h3>
+
+                                <p>
+                                    adalah produk sabun mandi cair (body wash) edisi spesial kolaborasi antara Guardian/Mannings dengan karakter dinosaurus populer asal Korea Selatan. Dengan Ekstrak Lavender Eropa, Memberikan aroma lavender yang lembut, menenangkan pikiran, serta membantu merilekskan tubuh setelah seharian beraktivitas. Dan Glycerin untuk Menjaga kelembapan alami kulit agar tidak terasa kering atau tertarik setelah dibilas.</p>
+                                   
+                                        <hr />
+                                        <p class="price">
+                                            <strong>Harga:</strong>
+                                            <span class="old-price">Rp 219.600</span>
+                                            <span class="discount-price">Rp 183.000</span>
+                                        </p>
+                            </div>
+                        </div>
+
+                        <div class="hospital-item" data-keywords="Mannings Guardian JOGUMAN Moisturising Shower Cream 1L - Almond Milk ">
+                            <img src="assets/img/Joguman Almond.png" alt="Mannings Guardian JOGUMAN Moisturising Shower Cream 1L - Almond Milk " />
+                            <div>
+
+                                <h3> Mannings Guardian JOGUMAN Moisturising Shower Cream 1L - Almond Milk  </h3>
+
+                                <p>
+                                    adalah sabun mandi cair (shower cream) yang diformulasikan khusus dengan kandungan susu almond alami dan gliserin. Produk ini merupakan hasil kolaborasi dengan karakter dinosaurus populer asal Korea Selatan.
+Memiliki formula lembut yang aman dan tidak merusak skin barrier atau lapisan pelindung kulit. Diperkaya dengan Hydra-Active blend dan susu almond yang membantu menjaga kelembapan alami kulit tanpa membuatnya terasa kering. Menghasilkan busa lembut dengan keharuman almond yang manis, powdery, dan menenangkan. </p>
+                                   
+                                    <hr />
+                                    <p class="price">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price"> Rp 297.000</span>
+                                        <span class="discount-price">Rp 247.500</span>
+                                    </p>
+                            </div>
+                        </div>
+
+                        <div class="hospital-item" data-keywords=" Mannings Guardian JOGUMAN Moisturising Shower Cream - Cherry Blossom ">
+                            <img src="assets/img/Joguman Chery.png" alt="Mannings Guardian JOGUMAN Moisturising Shower Cream - Cherry Blossom " />
+                            <div>
+
+                                <h3>Mannings Guardian JOGUMAN Moisturising Shower Cream - Cherry Blossom </h3>
+
+                                <p>
+                                    adalah produk sabun mandi cair hasil kolaborasi eksklusif antara peritel Mannings/Guardian dengan karakter dinosaurus populer dari Korea Selatan.
+Sabun mandi cair ini dirancang khusus untuk membersihkan kulit secara lembut sekaligus memberikan kelembapan ekstra. Produk ini menghasilkan busa beludru yang melimpah dan diperkaya dengan aroma bunga sakura (cherry blossom) yang manis dan menenangkan untuk memanjakan indra Anda selama mandi.</p>
+                                 
+                                    <hr />
+                                    <p class="price">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price">Rp 258.000 </span>
+                                        <span class="discount-price">Rp.215.000</span>
+                                    </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Toggle Navigation
+        let toggle = document.querySelector(".toggle");
+        let navigation = document.querySelector(".navigation");
+
+        if (toggle) {
+            toggle.onclick = function() {
+                navigation.classList.toggle("active");
+            };
+        }
+
+        document.addEventListener("click", function(event) {
+            if (window.innerWidth <= 768) {
+                if (!navigation.contains(event.target) &&
+                    !toggle.contains(event.target)) {
+                    navigation.classList.remove("active");
+                }
+            }
+        });
+
+        // Search Functionality
+        function searchProducts() {
+            const searchInput = document.getElementById("inputSearch");
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const productItems = document.querySelectorAll(".hospital-item");
+            const noResults = document.getElementById("noResults");
+            let foundCount = 0;
+
+            if (searchTerm === "") {
+                productItems.forEach((item) => {
+                    item.style.display = "";
+                });
+                noResults.style.display = "none";
+                return;
+            }
+
+            productItems.forEach((item) => {
+                const productName = item.textContent.toLowerCase();
+                const keywords = item.getAttribute("data-keywords") || "";
+
+                if (
+                    productName.includes(searchTerm) ||
+                    keywords.includes(searchTerm)
+                ) {
+                    item.style.display = "";
+                    foundCount++;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            noResults.style.display = foundCount === 0 ? "block" : "none";
+        }
+
+        document.getElementById("inputSearch")
+            .addEventListener("input", searchProducts);
+    </script>

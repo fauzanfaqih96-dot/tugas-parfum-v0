@@ -1,0 +1,1457 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MYSTERY SCENT</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Leaflet Routing Machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+    <style>
+       /* =========================
+   MAP
+========================= */
+
+#map {
+    height: 600px;
+    margin-top: 20px;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
+
+/* =========================
+   BEST / RECOMMENDED BUTTON
+========================= */
+
+.best-btn {
+    font-size: 22px;
+    padding: 15px 35px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #ffffff;
+    color: #ED7D22;
+
+    letter-spacing: 1px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.best-btn::before {
+    content: "";
+
+    position: absolute;
+
+    width: 200%;
+    height: 200%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(237, 125, 34, 0.15),
+        transparent
+    );
+
+    top: 0;
+    left: -100%;
+
+    transition: 0.6s;
+}
+
+.best-btn:hover::before {
+    left: 100%;
+}
+
+.best-btn:hover {
+    transform: translateY(-3px);
+
+    background: #ffffff;
+
+    color: #D96816;
+
+    box-shadow:
+        0 8px 25px rgba(237, 125, 34, 0.25);
+}
+
+
+/* =========================
+   MAIN BACKGROUND
+========================= */
+
+.main {
+    min-height: 100vh;
+
+    padding: 40px;
+
+    background: #F5F5F3;
+
+    color: #071A2B;
+}
+
+
+/* =========================
+   ORANGE HEADER / TOPBAR
+========================= */
+
+.topbar {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 20px 30px;
+
+    border-radius: 0;
+
+    background: #ED7D22;
+
+    border: none;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   TOGGLE
+========================= */
+
+.toggle ion-icon {
+    font-size: 28px;
+
+    color: #ffffff;
+
+    text-shadow: none;
+
+    transition: 0.3s ease;
+}
+
+.toggle ion-icon:hover {
+    color: #FFE0C2;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-message h3 {
+    color: #ffffff;
+
+    font-size: 24px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    font-weight: 700;
+
+    text-shadow: none;
+
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.welcome-message h3 span {
+    color: #ffffff;
+}
+
+
+/* =========================
+   FADE ANIMATION
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   HOSPITAL LIST
+========================= */
+
+#hospitalList {
+    margin-top: 20px;
+    padding: 0;
+}
+
+#hospitalList li {
+    list-style: none;
+
+    margin-bottom: 10px;
+
+    color: #071A2B;
+}
+
+
+/* =========================
+   BUTTON LIST RS
+========================= */
+
+#nearest {
+    background: #ED7D22;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 10px 25px;
+
+    transition: 0.3s ease;
+}
+
+#nearest:hover {
+    background: #D96816;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(237, 125, 34, 0.30);
+}
+
+
+/* =========================
+   BUTTON CARI RUTE
+========================= */
+
+#calculate {
+    background: #ffffff;
+
+    color: #ED7D22;
+
+    font-weight: bold;
+
+    border: 2px solid #ED7D22;
+
+    border-radius: 25px;
+
+    padding: 10px 25px;
+
+    transition: 0.3s ease;
+}
+
+#calculate:hover {
+    background: #ED7D22;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(237, 125, 34, 0.30);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+img {
+    width: 100px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   PRODUCT CONTAINER
+========================= */
+
+.container-central {
+    display: flex;
+
+    gap: 20px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+
+.container-content {
+    width: 200px;
+
+    background: #ffffff;
+
+    color: #071A2B;
+
+    border-radius: 10px;
+
+    padding: 16px;
+
+    border: 1px solid #E5E5E5;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border 0.3s ease;
+
+    position: relative;
+}
+
+.container-content:hover {
+    transform: translateY(-8px);
+
+    border-color: #ED7D22;
+
+    box-shadow:
+        0 15px 30px rgba(237, 125, 34, 0.18);
+}
+
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.container-content img {
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   PRODUCT TITLE
+========================= */
+
+.container-content h1 {
+    font-size: 16px;
+
+    margin: 10px 0 4px;
+
+    color: #071A2B;
+
+    font-weight: 700;
+}
+
+.container-content h1:last-child {
+    font-size: 14px;
+
+    color: #ED7D22;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+dialog.popup {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 28px;
+
+    max-width: 600px;
+
+    width: 95%;
+
+    background: #ffffff;
+
+    color: #071A2B;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30);
+
+    margin: auto;
+}
+dialog.popup {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+}
+
+
+dialog.popup::backdrop {
+    background: rgba(7, 26, 43, 0.65);
+}
+
+dialog.popup img {
+    display: block;
+
+    margin: 0 auto 20px;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    border-radius: 8px;
+}
+
+
+/* =========================
+   POPUP BUTTON
+========================= */
+
+dialog.popup button {
+    background: #ED7D22;
+
+    color: #ffffff;
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+dialog.popup button:hover {
+    background: #D96816;
+
+    color: #ffffff;
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .main {
+        padding: 20px;
+
+        background: #F5F5F3;
+    }
+
+    .topbar {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+
+        padding: 20px;
+
+        background: #ED7D22;
+    }
+
+    .welcome-message h3 {
+        font-size: 18px;
+    }
+
+    #map {
+        height: 300px;
+
+        border-radius: 10px;
+    }
+
+    .best-btn {
+        font-size: 18px;
+
+        padding: 14px 30px;
+
+        letter-spacing: 1px;
+    }
+
+    .container-central {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .container-content {
+        width: 90%;
+
+        max-width: 350px;
+    }
+
+    .container-content img {
+        height: 180px;
+    }
+
+    dialog.popup {
+        padding: 20px;
+
+        width: 95%;
+    }
+
+    dialog.popup img {
+        max-height: 50vh;
+    }
+
+    #hospitalList li {
+        font-size: 14px;
+    }
+
+    img {
+        width: 80px;
+    }
+}
+
+       /* =========================
+   MAIN BACKGROUND
+========================= */
+
+.main {
+    min-height: 100vh;
+    padding: 40px;
+
+    background: #F5F5F3;
+
+    color: #071A2B;
+}
+
+
+/* =========================
+   TOPBAR GUARDIAN
+========================= */
+
+.topbar {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px 30px;
+
+    border-radius: 0;
+
+    background: #ED7D22;
+
+    border: none;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   TOGGLE
+========================= */
+
+.toggle ion-icon {
+    font-size: 28px;
+
+    color: #ffffff;
+
+    text-shadow: none;
+
+    transition: 0.3s ease;
+}
+
+.toggle ion-icon:hover {
+    color: #FFE0C2;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-message h3 {
+    color: #ffffff;
+
+    font-size: 24px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    font-weight: 700;
+
+    text-shadow: none;
+
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.welcome-message h3 span {
+    color: #ffffff;
+}
+
+
+/* =========================
+   FADE ANIMATION
+========================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   HOSPITAL LIST
+========================= */
+
+#hospitalList {
+    margin-top: 20px;
+    padding: 0;
+}
+
+#hospitalList li {
+    list-style: none;
+
+    margin-bottom: 10px;
+
+    color: #071A2B;
+}
+
+
+/* =========================
+   TOMBOL LIST RS
+========================= */
+
+#nearest {
+    background-color: #ED7D22;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 10px 25px;
+
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+}
+
+#nearest:hover {
+    background-color: #D96816;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(237, 125, 34, 0.30);
+}
+
+
+/* =========================
+   TOMBOL CARI RUTE
+========================= */
+
+#calculate {
+    background-color: #ffffff;
+
+    color: #ED7D22;
+
+    font-weight: bold;
+
+    border: 2px solid #ED7D22;
+
+    border-radius: 25px;
+
+    padding: 10px 25px;
+
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+}
+
+#calculate:hover {
+    background-color: #ED7D22;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(237, 125, 34, 0.30);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+img {
+    width: 100px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   PRODUCT CONTAINER
+========================= */
+
+.container-central {
+    display: flex;
+
+    gap: 16px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.container-content {
+    width: 200px;
+
+    background: #ffffff;
+
+    color: #071A2B;
+
+    border-radius: 10px;
+
+    padding: 16px;
+
+    border: 1px solid #E5E5E5;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+    position: relative;
+}
+
+
+/* CARD HOVER */
+
+.container-content:hover {
+    transform: translateY(-8px);
+
+    border-color: #ED7D22;
+
+    box-shadow:
+        0 15px 30px rgba(237, 125, 34, 0.20);
+}
+
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.container-content img {
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   PRODUCT TITLE
+========================= */
+
+.container-content h1 {
+    font-size: 16px;
+
+    margin: 10px 0 4px;
+
+    color: #071A2B;
+
+    font-weight: 700;
+}
+
+
+/* HARGA / INFO ORANGE */
+
+.container-content h1:last-child {
+    font-size: 14px;
+
+    color: #ED7D22;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+dialog.popup {
+  dialog.popup {
+    border: none;
+    border-radius: 16px;
+    padding: 24px 32px; /* Diberi padding dalam agar teks & gambar tidak menempel tepi */
+    max-width: 550px;
+    width: 90%;
+    background: #ffffff;
+    color: #071a2b;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.30);
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Latar belakang gelap di belakang modal */
+dialog.popup::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+}
+/* =========================
+   POPUP BACKDROP
+========================= */
+
+dialog.popup::backdrop {
+    background: rgba(7, 26, 43, 0.65);
+}
+/* =========================
+   POPUP PRODUCT
+========================= */
+
+.popup {
+    width: min(90%, 550px);
+    max-height: 85vh;
+    padding: 0;
+    border: none;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: popupShow 0.25s ease;
+}
+
+/* Posisi popup tepat di tengah */
+.popup[open] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Background belakang popup */
+.popup::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+}
+
+/* Isi popup */
+.popup-content {
+    padding: 25px;
+    text-align: center;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+/* Gambar produk */
+.popup-content img {
+    display: block;
+    width: 180px !important;
+    height: 180px;
+    object-fit: contain;
+    margin: 0 auto 15px;
+}
+
+/* Judul */
+.popup-content h1 {
+    font-size: 22px;
+    line-height: 1.4;
+    margin: 10px 0 15px;
+    color: #333;
+}
+
+/* Deskripsi */
+.popup-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+/* Kandungan utama */
+.popup-content .ingredient {
+    text-align: left;
+    background: #f8f8f8;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Tombol close */
+.popup-content button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #e63946;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.popup-content button:hover {
+    background: #c92f3b;
+    transform: translateY(-1px);
+}
+
+/* Animasi */
+@keyframes popupShow {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -47%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+    .popup {
+        width: 92%;
+        max-height: 88vh;
+        border-radius: 15px;
+    }
+
+    .popup-content {
+        padding: 20px;
+    }
+
+    .popup-content img {
+        width: 140px !important;
+        height: 140px;
+    }
+
+    .popup-content h1 {
+        font-size: 18px;
+    }
+
+    .popup-content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+
+
+/* BUTTON HOVER */
+
+dialog.popup button:hover {
+    background: #D96816;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(237, 125, 34, 0.25);
+}
+
+
+/* =========================
+   BEST BUTTON
+========================= */
+
+.best-btn {
+    font-size: 22px;
+
+    padding: 15px 35px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    color: #ED7D22;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.best-btn:hover {
+    transform: translateY(-3px);
+
+    color: #D96816;
+
+    box-shadow:
+        0 8px 25px rgba(237, 125, 34, 0.25);
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+#map {
+    height: 600px;
+
+    margin-top: 20px;
+
+    border-radius: 8px;
+
+    border: none;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .main {
+        padding: 20px;
+
+        background: #F5F5F3;
+    }
+
+
+    /* TOPBAR */
+
+    .topbar {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+
+        padding: 20px;
+
+        border-radius: 0;
+
+        background: #ED7D22;
+    }
+
+
+    /* WELCOME */
+
+    .welcome-message h3 {
+        font-size: 18px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* MAP */
+
+    #map {
+        height: 300px;
+
+        border-radius: 8px;
+    }
+
+
+    /* BEST BUTTON */
+
+    .best-btn {
+        font-size: 18px;
+
+        padding: 14px 30px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* PRODUCT */
+
+    .container-central {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .container-content {
+        width: 90%;
+
+        max-width: 350px;
+    }
+
+    .container-content img {
+        height: 180px;
+    }
+
+
+    /* POPUP */
+
+    dialog.popup {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+}
+
+
+    dialog.popup img {
+        max-height: 35vh;
+    }
+
+
+    /* HOSPITAL LIST */
+
+    #hospitalList li {
+        font-size: 14px;
+    }
+
+
+    /* IMAGE */
+
+    img {
+        width: 80px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+
+
+            
+              </span>
+                        <span class="title">HOME</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Rute.html">
+                        <span class="icon">
+                <ion-icon name="trophy-outline"></ion-icon>
+              </span>
+                        <span class="title">TOP BRANDS</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Informasi.html">
+                        <span class="icon">
+                <ion-icon name="bulb-outline"></ion-icon>
+              </span>
+                        <span class="title">INFORMATION</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Daftarlist.html">
+                        <span class="icon">
+                <ion-icon name="trending-up-outline"></ion-icon>
+              </span>
+                        <span class="title">TRENDING PRODUCTS</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="welcome-message text-center w-100">
+                    <h3 class="fw-bolder mb-2">PERSONAL CARE</h3>
+                </div>
+            </div>
+
+            <div class="m-5">
+                <header>
+                    <div class="container px-5">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6"></div>
+                        </div>
+                    </div>
+                </header>
+
+                <form id="searchForm">
+                    <div class="form-group text-center mt-4">
+                        <button id="calculate" type="button" class="best-btn">
+          BEST SELLER !!
+        </button>
+                    </div>
+                </form>
+                </form>
+                <div class="container-central">
+                    <div class="container-content">
+                        <img src="assets/img/Mannings almond (1).png" onclick="this.parentElement.querySelector( 'dialog').showModal() " />
+                        <h1>Mannings Guardian Almond Milk Shower Cream </h1>
+                        <div>
+                          <h1> 
+                            <div class="price-container" style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+  <span style="text-decoration: line-through; color: #999; font-size: 14px;">
+    Rp.106.000
+  </span>
+  <span style="color: #e63946; font-size: 18px; font-weight: bold;">
+    Rp.74.000
+  </span>
+</div>
+
+<!-- Bar Diskon Member -->
+<div class="discount-badge" style="width: 100%; background: linear-gradient(180deg, #d24f0e 0%, #e01b1b 100%); color: #fefbfb; border-radius: 8px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 6px rgba(221, 107, 40, 0.25); font-family: sans-serif;">
+  <div class="discount-left" style="display: flex; flex-direction: column; gap: 2px;">
+    <div class="discount-label" style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; letter-spacing: 0.5px;">
+      <span> DISCOUNT MEMBER
+    </div>
+    <div class="discount-price" style="font-size: 14px; font-weight: 700;">
+      Rp.42.000
+    </div>
+  </div>
+  <div class="discount-percent" style="font-size: 38px; font-weight: 800;">
+    60%
+  </div>
+</div>
+             </h1>   
+                            <dialog class="popup ">
+                                <img src="assets/img/Mannings almond (1).png" style="width: 100px " />
+                                <h1>Mannings Guardian Almond Milk Shower Cream </h1>
+                                <p>
+                                    adalah krim mandi ukuran 1 liter yang diformulasikan khusus dengan kandungan susu almond alami dan gliserin untuk melembapkan kulit. Memiliki formula lembut yang aman dan tidak merusak skin barrier atau lapisan pelindung kulit. Diperkaya dengan Hydra-Active blend dan susu almond yang membantu menjaga kelembapan alami kulit tanpa membuatnya terasa kering. Menghasilkan busa lembut dengan keharuman almond yang manis, powdery, dan menenangkan. </p>
+                                    <p>
+                                        <strong>Kandungan Utama:</strong> Natural almond milk (susu almond) dan glycerin (gliserin) untuk menjadikan kulit terasa lebih lembut, kenyal, dan terawat. </p>
+                                   
+                                    <button onclick="this.closest( 'dialog').close() "> Close  </button>
+                            </dialog>
+                        </div>
+                    </div>
+                    <div class="container-content ">
+                        <img src="assets/img/Mannings almond (2).png" onclick="this.parentElement.querySelector( 'dialog').showModal() " onclick=" const d=this.nextElementSibling; d.showModal ? d.showModal() : d.setAttribute( 'open', ''); " />
+                        <h1>Mannings Guardian Soft & Moist Rice Milk Shower Cream </h1>
+
+                        <h1>
+                            <div class="price-container" style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+  <span style="text-decoration: line-through; color: #999; font-size: 14px;">
+    Rp.106.000
+  </span>
+  <span style="color: #e63946; font-size: 18px; font-weight: bold;">
+    Rp.74.000
+  </span>
+</div>
+
+<!-- Bar Diskon Member -->
+<div class="discount-badge" style="width: 100%; background: linear-gradient(180deg, #d24f0e 0%, #e01b1b 100%); color: #fefbfb; border-radius: 8px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 6px rgba(221, 107, 40, 0.25); font-family: sans-serif;">
+  <div class="discount-left" style="display: flex; flex-direction: column; gap: 2px;">
+    <div class="discount-label" style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; letter-spacing: 0.5px;">
+      <span> DISCOUNT MEMBER
+    </div>
+    <div class="discount-price" style="font-size: 14px; font-weight: 700;">
+      Rp.42.000
+    </div>
+  </div>
+  <div class="discount-percent" style="font-size: 38px; font-weight: 800;">
+    60%
+  </div>
+</div>
+                        </h1>
+
+                        <dialog class="popup ">
+                            <img src="assets/img/Mannings almond (2).png" style=" width: 100px " />
+                            <h1>Mannings Guardian Soft & Moist Rice Milk Shower Cream </h1>
+                            <p>
+                               adalah krim mandi cair yang diformulasikan khusus dengan kandungan ekstrak rice milk (susu beras) alami dan gliserin untuk membersihkan serta merawat kulit. Sabun Rice Milk Guardian memiliki formulasi soap-free (bebas sabun) sehingga sangat lembut di kulit dan tidak merusak lapisan pelindung kelembapan alami kulit. Diperkaya dengan sifat antioksidan dari rice milk yang membantu menjaga kesehatan kulit secara menyeluruh.
+                                <p>
+                                    <strong>Kandungan Utama :</strong> Diperkaya dengan Rice Milk alami dan gliserin untuk menjaga kelembapan kulit.  </p>
+
+                                <button onclick="this.closest( 'dialog').close() ">Close</button>
+                        </dialog>
+                    </div>
+
+                    <div class="container-content ">
+                        <img src="assets/img/Mannings GoatsMilk.png" onclick="this.parentElement.querySelector( 'dialog').showModal() " />
+                        <h1>Mannings Guardian Goat's Milk Shower Cream </h1>
+                        <h1>
+                             <div class="price-container" style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+  <span style="text-decoration: line-through; color: #999; font-size: 14px;">
+    Rp.106.000
+  </span>
+  <span style="color: #e63946; font-size: 18px; font-weight: bold;">
+    Rp.74.000
+  </span>
+</div>
+
+<!-- Bar Diskon Member -->
+<div class="discount-badge" style="width: 100%; background: linear-gradient(180deg, #d24f0e 0%, #e01b1b 100%); color: #fefbfb; border-radius: 8px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 6px rgba(221, 107, 40, 0.25); font-family: sans-serif;">
+  <div class="discount-left" style="display: flex; flex-direction: column; gap: 2px;">
+    <div class="discount-label" style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; letter-spacing: 0.5px;">
+      <span> DISCOUNT MEMBER
+    </div>
+    <div class="discount-price" style="font-size: 14px; font-weight: 700;">
+      Rp.42.000
+    </div>
+  </div>
+  <div class="discount-percent" style="font-size: 38px; font-weight: 800;">
+    60%
+  </div>
+</div>
+                        </h1>
+
+                        <dialog class="popup ">
+                            <img src="assets/img/Mannings GoatsMilk.png" style="width: 200px " />
+                            <h1>Mannings Guardian Goat's Milk Shower Cream </h1>
+                            
+                            <p>
+                                 adalah sabun mandi cair yang diformulasikan khusus dengan kandungan ekstrak susu kambing alami dan gliserin untuk merawat kelembapan kulit. Memiliki pH yang seimbang untuk membersihkan kulit dengan lembut tanpa merusak lapisan pelindung kelembapan alami (moisture barrier). Kandungan Susu Kambing kaya akan antioksidan dari goat's milk yang membantu menjaga kesehatan kulit, menutrisi, serta membuatnya tampak lebih cerah.</p>
+                                <p>
+                                    <strong>Kandungan Utama :</strong> Diformulasikan secara khusus dengan susu kambing (Goat Milk) alami dan gliserin untuk menutrisi kulit.   </p>
+
+                                <button onclick="this.closest( 'dialog').close() ">Close</button>
+                        </dialog>
+                    </div>
+
+                    <div class="container-content ">
+                        <img src="assets/img/Mannings Cherryblossom.png " onclick="this.parentElement.querySelector( 'dialog').showModal() " />
+                        <h1>Mannings Guardian Cherry Blossom</h1>
+                        <h1>
+                             <div class="price-container" style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+  <span style="text-decoration: line-through; color: #999; font-size: 14px;">
+    Rp.106.000
+  </span>
+  <span style="color: #e63946; font-size: 18px; font-weight: bold;">
+    Rp.74.000
+  </span>
+</div>
+
+<!-- Bar Diskon Member -->
+<div class="discount-badge" style="width: 100%; background: linear-gradient(180deg, #d24f0e 0%, #e01b1b 100%); color: #fefbfb; border-radius: 8px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 6px rgba(221, 107, 40, 0.25); font-family: sans-serif;">
+  <div class="discount-left" style="display: flex; flex-direction: column; gap: 2px;">
+    <div class="discount-label" style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; letter-spacing: 0.5px;">
+      <span> DISCOUNT MEMBER
+    </div>
+    <div class="discount-price" style="font-size: 14px; font-weight: 700;">
+      Rp.42.000
+    </div>
+  </div>
+  <div class="discount-percent" style="font-size: 38px; font-weight: 800;">
+    60%
+  </div>
+</div>
+                        </h1>
+                        <dialog class="popup ">
+                            <img src="assets/img/Mannings Cherryblossom.png " style="width: 200px " />
+                            <h1>Mannings Guardian Cherry Blossom</h1>
+
+                            <p>adalah sabun mandi cair yang diformulasikan khusus dengan ekstrak bunga Sakura dan Glycerin untuk memberikan nutrisi, menjaga kelembapan alami, dan membuat kulit terasa lebih kenyal.</p>
+                               
+                                <p>
+                                    <strong>Kandungan Utama :</strong>  Diperkaya dengan ekstrak Bunga Sakura (Cherry Blossom Extract) dan Gliserin. </p>
+     
+                                <button onclick="this.closest( 'dialog').close() ">Close</button>
+                        </dialog>
+                    </div>
+                 </div>
+            </div>
+        </div>
+</body>
+<!-- =========== Scripts =========  -->
+<script src="assets/js/main.js "></script>
+<script type="module " src="script.js "></script>
+
+<!-- ====== ionicons ======= -->
+<script type="module " src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js "></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js "></script>
+
+</html>
+    

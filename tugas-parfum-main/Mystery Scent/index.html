@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(20, 10, 45, 0.45),
+            rgba(20, 10, 45, 0.55)
+        ),
+        url("assets/img/guardi.png");
+
+    /* Menutupi seluruh layar */
+    background-size: cover;
+
+    /* Jangan mengulang gambar */
+    background-repeat: no-repeat;
+
+    /* Posisi gambar di tengah */
+    background-position: center center;
+
+    /* Background tetap saat scrolling */
+    background-attachment: fixed;
+
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container {
+    width: 320px;
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(219, 219, 219, 0.95),
+        rgba(201, 126, 13, 0.95)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(123, 44, 255, 0.15);
+
+    text-align: center;
+
+    backdrop-filter: blur(10px);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.menu-title {
+    color: #020202;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+/* =========================
+   MENU BAR
+========================= */
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+
+    padding: 13px 18px;
+
+    border-radius: 12px;
+
+    /* Glass Neon */
+    background: rgba(0, 245, 255, 0.07);
+
+    border: 1px solid rgba(0, 0, 0, 0.35);
+
+    color: #010101;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 0 10px rgba(0, 245, 255, 0.08);
+
+    transition: all 0.3s ease;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.menu a ion-icon {
+    font-size: 21px;
+
+    color: #000000;
+
+    transition: all 0.3s ease;
+
+    filter:
+        drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.menu a:hover {
+    background: linear-gradient(
+        90deg,
+        #ffb71d,
+        #fffffd,
+        #f9f2f4
+    );
+
+    border-color: transparent;
+
+    color: #000000;
+
+    transform: translateX(7px) scale(1.02);
+
+    box-shadow:
+        0 0 15px rgba(203, 217, 6, 0.6),
+        0 0 30px rgba(254, 255, 250, 0.5),
+        0 0 45px rgba(209, 202, 7, 0.25);
+}
+
+.menu a:hover ion-icon {
+    color: #ffffff;
+
+    transform: scale(1.15);
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    </style>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2 class="menu-title"> MENU </h2>
+
+        <ul class="menu">
+            <li>
+                <a href="Rute.html">
+                    <ion-icon name="trophy-outline"></ion-icon>
+                    <span>Top Brands</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="Informasi.html">
+                    <ion-icon name="bulb-outline"></ion-icon>
+                    <span>Information</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="Daftarlist.html">
+                    <ion-icon name="trending-up-outline"></ion-icon>
+                    <span>Trending Products</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
